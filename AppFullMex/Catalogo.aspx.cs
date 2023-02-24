@@ -1,7 +1,10 @@
 ﻿using AppFullMex.Models;
+using ClosedXML.Excel;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Services.Description;
@@ -19,6 +22,56 @@ namespace AppFullMex
             GetCat();
 
         }
+        //protected void DC(object sender, EventArgs e)
+        //{
+        //    //string idd = Request.QueryString["id_num"];
+        //    string cadena2 = @"Data source=172.24.16.112; Initial Catalog=TMWSuite; User ID=sa; Password=tdr9312;Trusted_Connection=false;MultipleActiveResultSets=true";
+        //    DataTable dataTable = new DataTable();
+        //    using (SqlConnection connection = new SqlConnection(cadena2))
+        //    {
+        //        connection.Open();
+        //        using (SqlCommand selectCommand = new SqlCommand("usp_CatFullMexCat", connection))
+        //        {
+
+        //            selectCommand.CommandType = CommandType.StoredProcedure;
+        //            selectCommand.CommandTimeout = 100000;
+
+        //            selectCommand.ExecuteNonQuery();
+        //            using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(selectCommand))
+        //            {
+        //                try
+        //                {
+        //                    //selectCommand.Connection.Open();
+        //                    sqlDataAdapter.Fill(dataTable);
+        //                    using (XLWorkbook wb = new XLWorkbook())
+        //                    {
+        //                        wb.Worksheets.Add(dataTable, "2023");
+
+        //                        Response.Clear();
+        //                        Response.Buffer = true;
+        //                        Response.Charset = "";
+        //                        Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+        //                        Response.AddHeader("content-disposition", "attachment;filename=CatalogoFuelMex.xlsx");
+        //                        using (MemoryStream MyMemoryStream = new MemoryStream())
+        //                        {
+        //                            wb.SaveAs(MyMemoryStream);
+        //                            MyMemoryStream.WriteTo(Response.OutputStream);
+        //                            Response.Flush();
+        //                            Response.End();
+        //                        }
+        //                    }
+        //                }
+        //                catch (SqlException ex)
+        //                {
+        //                    connection.Close();
+        //                    string message = ex.Message;
+        //                }
+        //            }
+        //        }
+        //    }
+
+
+        //}
         protected void Button1_Click(object sender, EventArgs e)
         {
             string billto = Billto.Text;
@@ -63,7 +116,7 @@ namespace AppFullMex
 
             DataTable cargaStops = facLabControle.GetCat();
             //cargaStops.AsDataView().RowFilter("");
-            int numCells = 7;
+            int numCells = 8;
             int rownum = 0;
             //cargaStops = cargaStops.Orde
             foreach (DataRow row in cargaStops.Rows)
@@ -73,9 +126,14 @@ namespace AppFullMex
                 {
                     if (i == 0)
                     {
+                       
+                        
                         HyperLink hp1 = new HyperLink();
+
                         hp1.ID = "hpIndex" + rownum.ToString();
-                        hp1.Text = "<button type='button' class='btn btn-primary'>" + row[i].ToString() + "</button>";
+                        hp1.Text = "<i class='fa fa-minus-square btn btn-danger' aria-hidden='true'></i>";
+                        hp1.NavigateUrl = "DeleteR.aspx?idnum=" + row[i].ToString();
+                        //hp1.Text = "<button type='button' class='btn btn-primary'>" + row[i].ToString() + "</button>";
                         //hp1.NavigateUrl = "DetallesComplemento.aspx?factura=" + row[i].ToString();
                         TableCell c = new TableCell();
                         c.Controls.Add(hp1);
@@ -99,6 +157,7 @@ namespace AppFullMex
             }
 
         }
+        
 
 
     }

@@ -70,7 +70,7 @@ namespace AppFullMex
                                 Response.Buffer = true;
                                 Response.Charset = "";
                                 Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-                                Response.AddHeader("content-disposition", "attachment;filename=FullMexMonto.xlsx");
+                                Response.AddHeader("content-disposition", "attachment;filename=FuelMexMonto.xlsx");
                                 using (MemoryStream MyMemoryStream = new MemoryStream())
                                 {
                                     wb.SaveAs(MyMemoryStream);
@@ -94,7 +94,7 @@ namespace AppFullMex
         protected void Button1_Click(object sender, EventArgs e)
         {
             
-                        Response.Redirect("FullMex.aspx", false); ;
+                        Response.Redirect("FuelMex.aspx", false); ;
                     
 
         }

@@ -45,27 +45,7 @@
             });
         });
     </script>
-    <script type="text/javascript">
-
-        function RCalert() {
-            var verc = document.getElementById('card2');
-            verc.style.display = 'block';
-            <%--var divv = document.getElementById('<%=Rcartaporte.ClientID%>').value;
-            
-            
-            swal({
-                title: '<h1><i style="color:#a5dc86;font-size:80px;" class="fa fa-check-circle" aria-hidden="true"></i></h1>',
-                icon: 'success',
-                html: '<div class="alert alert-success" role="alert">' + divv+'</div>',
-                showCloseButton: false,
-                showCancelButton: false,
-                focusConfirm: false
-            });--%>
-            return true;
-        }
-
-
-    </script>
+    
    
 <style>
         .mitabla {
@@ -254,6 +234,10 @@
         .content-wrapper {
             background: #ebebeb;
         }
+        .tstyle{
+            padding:20px !important;
+            color:red !important;
+        }
 
         .content {
             width: 100%;
@@ -322,7 +306,7 @@
         <ul class="vertical-menu">
              <li>
 
-                <b class="nav-link text-light" style="font-size:25px !important; text-align:center !important">FullMex</b>
+                <b class="nav-link text-light" style="font-size:25px !important; text-align:center !important">FuelMex</b>
                 
 
             </li>
@@ -333,8 +317,8 @@
 
             </li>
              <li>
-                 <a href="FullMex.aspx" class="nav-link">
-                <b class="nav-link text-light" style="font-size:15px !important; text-align:center !important;">Generar Monto</b>
+                 <a href="FuelMex.aspx" class="nav-link">
+                <b class="nav-link text-light" style="font-size:15px !important; text-align:center !important;">Generar monto</b>
                 </a>
 
             </li>
@@ -352,7 +336,7 @@
          <div class="container-fluid mt-4">
                  <div class="card" runat="server" id="card1">
                   <div class="card-header">
-                    <b>FullMex | Catálogo de registro</b>
+                    <b>FuelMex | Catálogo de registro</b>
                       <%--<div runat="server" id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
                         <span id="current-progress"></span>
                       </div>--%>
@@ -451,12 +435,13 @@
                       
              <div class="card" runat="server" id="card2">
                   <div class="card-header  bg-success">
-                    <b style="color:white">FullMex | Catálogo</b>
+
+                    <b style="color:white">FuelMex | Catálogo</b>
                   </div>
                   <div class="card-body">
                     <div class="row">
                         
-                        <div class="form-group col-sm-12">
+                        <div class="col-sm-12">
                                    
                                     <asp:UpdatePanel ID="UpdatePanel2" UpdateMode="Conditional" runat="server">
                                         <ContentTemplate>
@@ -467,8 +452,11 @@
                                           
           
                                            
-                                             <asp:Table id="tablaStops" class="table table-striped" runat="server" Font-Names="ARIAL">
+                                             <asp:Table id="tablaStops" class="table table-sm table-striped text-center mt-4" Style="width:90%; padding:10px" runat="server" Font-Names="ARIAL">
                                                 <asp:TableRow>
+                                                    <asp:TableCell HorizontalAlign="Center">
+                                                        <b>#</b>
+                                                    </asp:TableCell>
                                                     <asp:TableCell HorizontalAlign="Center">
                                                         <b>Billto</b>
                                                     </asp:TableCell><asp:TableCell HorizontalAlign="Center">

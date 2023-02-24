@@ -15,6 +15,10 @@ namespace AppFullMex.Models
         {
             this.modelFact.PostCat(billto, fechaInicial, fechaFinal, precioBase, cre, rendimiento, factor);
         }
+        public void IFpagoDelet(string idnum)
+        {
+            this.modelFact.IFpagoDelet(idnum);
+        }
         public DataTable GetCat()
         {
             return this.modelFact.GetCat();

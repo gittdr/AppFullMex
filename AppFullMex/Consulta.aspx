@@ -303,7 +303,7 @@
         <ul class="vertical-menu">
             <li>
 
-                <b class="nav-link text-light" style="font-size:25px !important; text-align:center !important">FullMex</b>
+                <b class="nav-link text-light" style="font-size:25px !important; text-align:center !important">FuelMex</b>
                 
 
             </li>
@@ -315,8 +315,8 @@
             </li>
            
              <li>
-                 <a href="FullMex.aspx" class="nav-link">
-                <b class="nav-link text-light" style="font-size:15px !important; text-align:center !important;color:#ffc107 !important">Generar Monto</b>
+                 <a href="FuelMex.aspx" class="nav-link">
+                <b class="nav-link text-light" style="font-size:15px !important; text-align:center !important;color:#ffc107 !important">Generar monto</b>
                 </a>
 
             </li>
@@ -336,7 +336,7 @@
                   <div class="card-header" >
                       <div class="row">
                          <div class="col-md-6 col-sm-6 col-6">
-                              <b>FullMex | Monto generado</b>
+                              <b>FuelMex | Monto generado</b>
                          </div>
                           <div class="col-md-6 col-sm-6 col-6 mb-2" style="text-align:right">
                               <asp:Button Text="Descargar" CssClass="btn btn-danger" OnClick="DM" runat="server"/>

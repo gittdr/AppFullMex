@@ -85,7 +85,9 @@
   <ItemGroup>
     <Content Include="Catalogo.aspx" />
     <Content Include="Consulta.aspx" />
-    <Content Include="FullMex.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="DeleteR.aspx" />
+    <Content Include="FuelMex.aspx" />
     <Content Include="Models\icon.png" />
     <Content Include="Models\indicator.gif" />
     <Content Include="Models\load-37_256.gif" />
@@ -108,12 +110,26 @@
     <Compile Include="Consulta.aspx.designer.cs">
       <DependentUpon>Consulta.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FullMex.aspx.cs">
-      <DependentUpon>FullMex.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FullMex.aspx.designer.cs">
-      <DependentUpon>FullMex.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteR.aspx.cs">
+      <DependentUpon>DeleteR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteR.aspx.designer.cs">
+      <DependentUpon>DeleteR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FuelMex.aspx.cs">
+      <DependentUpon>FuelMex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FuelMex.aspx.designer.cs">
+      <DependentUpon>FuelMex.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\FacLabControle.cs" />
     <Compile Include="Models\ModelFact.cs" />
